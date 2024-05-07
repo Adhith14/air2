@@ -34,25 +34,67 @@ import { Login } from "./components/Login";
 import { Contact } from "./components/Contact";
 import { Footer } from "./components/Footer";
 import BookingForm from './components/BookingForm';
+import {UserNav} from './components/UserNav';
+import SeatSelection from './components/SeatSelection';
+import PaymentPage from './components/PaymentPage';
+import FlightCard from './components/FlightCard';
+
 
 function App() {
+ 
+
   return (
     <Router>
       <div className="App">
-        <NavBar />
+        
         <Routes>
          
           <Route path="/" element={
             <>
+              <NavBar />
               <Banner />
         {/* Define routes for Register and Login */}
               <Contact />
               <Footer />
             </>
           } />
-          <Route path="/register" element={<Register />} />
-          <Route path="/login" element={<Login />} />
-          <Route path="/book" element={<BookingForm/>} />
+          <Route path="/register" element={
+            <>
+              <NavBar />
+              <Register />
+            </>
+          } />
+          <Route path="/login" element={
+          <>
+            <NavBar />
+            <Login />
+          </>} />
+          <Route path="/book" element={
+            <>
+            <UserNav/>
+            <BookingForm/>
+            </>
+          } />
+          <Route path="/seat-selection" element={
+            <>
+            <UserNav/>
+            <SeatSelection/>
+            </>
+          } />
+          <Route path="/payment" element={
+            <>
+            <UserNav/>
+            <PaymentPage/>
+            </>
+          } />
+          <Route path="/flightcard" element={
+            <>
+            <UserNav/>
+            <FlightCard/>
+            </>
+          } />
+          
+          
         </Routes>
         
        

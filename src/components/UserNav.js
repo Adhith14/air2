@@ -1,9 +1,8 @@
 import { useState, useEffect } from "react";
 import { Navbar, Nav, Container } from "react-bootstrap";
 import { Link } from "react-router-dom"; // Import Link from react-router-dom
-import navIcon2 from '../assets/img/nav-icon2.svg';
-import navIcon3 from '../assets/img/nav-icon3.svg';
-export const NavBar = () => {
+
+export const UserNav = () => {
 
   const [activeLink, setActiveLink] = useState('home');
   const [scrolled, setScrolled] = useState(false);
@@ -39,17 +38,14 @@ export const NavBar = () => {
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="ms-auto">
             <Nav.Link as={Link} to="/" className={activeLink === 'home' ? 'active navbar-link' : 'navbar-link'} onClick={() => onUpdateActiveLink('home')}>Home</Nav.Link>
-            <Nav.Link as={Link} to="/register" className={activeLink === 'signup' ? 'active navbar-link' : 'navbar-link'} onClick={() => onUpdateActiveLink('signup')}>Sign Up</Nav.Link>
-            <Nav.Link as={Link} to="/login" className={activeLink === 'signin' ? 'active navbar-link' : 'navbar-link'} onClick={() => onUpdateActiveLink('signin')}>Sign In</Nav.Link>
+            <Nav.Link as={Link} to="/flightcard" className={activeLink === 'signup' ? 'active navbar-link' : 'navbar-link'} onClick={() => onUpdateActiveLink('signup')}>My Bookings</Nav.Link>
+           
           </Nav>
-          <span className="navbar-text">
-            <div className="social-icon">
-              <a href="https://www.facebook.com/"><img src={navIcon2} alt="" /></a>
-              <a href="https://www.instagram.com/"><img src={navIcon3} alt="" /></a>
-            </div>
-          </span>
+          
         </Navbar.Collapse>
       </Container>
     </Navbar>
   )
 }
+
+
