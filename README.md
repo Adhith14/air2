@@ -9,7 +9,7 @@ Built using:
 - CSS animations library: Animate.css
 - Back-end: Java Spring Boot
 
-In the /, you can run:
+You can run the app using:
 
 ### `npm start`
 
